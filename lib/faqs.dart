@@ -33,56 +33,42 @@ class _InsightsPageState extends State<InsightsPage> {
         heading: "What are the symptoms of UTI",
         body:
             "Urinary Tract Infection (UTI) is characterized by various symptoms stemming from the inflammation of the urinary tract, commonly caused by bacteria. The hallmark symptom is a persistent, burning sensation during urination. Individuals with UTIs may experience increased urgency and frequency of urination, often accompanied by lower abdominal pain or discomfort. The urine may appear cloudy or have a strong, unpleasant odor."),
-    Item(
-        heading: "1fbfb23",
-        body:"AdfbdfngnBC"),
-    Item(
-        heading: "4fdbdfb56",
-        body:
-            "DdfbdfbEF"),
+    Item(heading: "1fbfb23", body: "AdfbdfngnBC"),
+    Item(heading: "4fdbdfb56", body: "DdfbdfbEF"),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        padding: EdgeInsets.symmetric(vertical: 10),
+        height: double.infinity,
         decoration: BoxDecoration(
-        gradient: LinearGradient(
-          colors: [
-            Color.fromARGB(255, 247, 145, 179),
-            Colors.white,
-          ],
-          begin: Alignment.topLeft,
-          end: Alignment.bottomRight,
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 247, 145, 179),
+              Colors.white,
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
         ),
-      ),
+        padding: EdgeInsets.symmetric(vertical: 10),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Container(
             padding: const EdgeInsets.symmetric(vertical: 45, horizontal: 20),
-      //       decoration: BoxDecoration(
-      //       gradient: LinearGradient(
-      //         colors: [
-      //            Color.fromARGB(255, 247, 145, 179),
-      //            Colors.white,
-      //         ],
-      //     begin: Alignment.topLeft,
-      //     end: Alignment.bottomRight,
-      //   ),
-      // ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Container(
+                Padding(
                   padding: const EdgeInsets.all(10),
                   child: Text(
-                  "Insights",
-                  style: TextStyle(
-                    fontSize: 45,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    "Insights",
+                    style: TextStyle(
+                      fontSize: 45,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                   ),
-                ),
                 ),
                 Container(
                   color: Colors.white54,
@@ -98,7 +84,8 @@ class _InsightsPageState extends State<InsightsPage> {
                           });
                         },
                         children: [
-                          ...items.map((item) => ExpansionPanel(
+                          ...items.map(
+                            (item) => ExpansionPanel(
                               canTapOnHeader: true,
                               isExpanded: item.isExpanded,
                               headerBuilder: (context, isExpanded) {
@@ -108,7 +95,9 @@ class _InsightsPageState extends State<InsightsPage> {
                               },
                               body: ListTile(
                                 title: Text(item.body),
-                              )))
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
